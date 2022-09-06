@@ -7,7 +7,6 @@ from classroom.asignatura import Asignatura
 class Grupo:
 
     grado = None
-
     def __init__(self, grupo="grupo ordinado", asignaturas=None, estudiantes=None):
         self._grupo = grupo
         self._asignaturas = asignaturas
@@ -18,11 +17,14 @@ class Grupo:
             self._asignaturas.append(Asignatura(x))
 
     def agregarAlumno(self, alumno, lista=[]):
+        
         if(lista is None):
             lista.append(alumno)
             self.listadoAlumnos = self.listadoAlumnos + lista
+        
         else:
             self.listadoAlumnos = [alumno]
+
 
     @ classmethod
     def asignarNombre(cls, nombre="Grado 10"):
